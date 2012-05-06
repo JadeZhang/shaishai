@@ -1,0 +1,26 @@
+{% extends "lib/layout.html" %}
+{% block title %}404 - 同步盘{% endblock %}
+
+{% block stylesheets %}
+	<link type="text/css" rel="stylesheet" href="{{ 'css/apps/404.css'|staticurl }}" />
+{% endblock %}
+
+{% block mainbody %}
+{% include "inc/header.html" %}
+
+<div id="content">
+	<div class="wrapper clearfix">
+		<div class="error-404">
+			<h3>出错啦，您访问的页面不存在！</h3>
+			<dl>
+				<dt>对不起，您正在访问一个不存在的页面。可能是因为：</dt>
+				<dd>1. 您输入的地址不正确</dd>
+				<dd>2. 该文件或者页面已被删除</dd>
+			</dl>
+			<a href="/" class="input-button">返回同步盘首页</a>
+		</div>
+	</div>
+</div>
+
+{% include "inc/footer.html" %}
+{% endblock %}
