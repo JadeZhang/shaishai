@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<title>{% block title %}{% endblock %}</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lt IE 9]><script src="/static/js/lib/html5.js"></script><![endif]-->
+		<!--[if lt IE 7]><script src="/static/js/lib/belatedpng.js"></script><![endif]-->
+		<link type="image/x-icon" rel="shortcut icon" href="/static/favicon.ico" />
+		<link type="text/css" rel="stylesheet" href="/static/css/global.css" />
+		{% block stylesheets %}{% endblock %}
+		<script type="text/javascript" src="/static/js/lib/jquery.js"></script>
+		{% block scripts %}{% endblock %}
+	</head>
+	<body>
+		{% block mainbody %}{% endblock %}
+	</body>
+</html>

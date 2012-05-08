@@ -84,3 +84,7 @@ ALTER TABLE collection CHANGE COLUMN img_id img_id INT UNSIGNED COMMENT '图片I
 ALTER TABLE collection ADD COLUMN grouptag VARCHAR(32) COMMENT '图片所在群组' AFTER img_id;
 ALTER TABLE collection ADD COLUMN description VARCHAR(500) COMMENT '收藏描述' AFTER grouptag;
 
+/******************************2012-05-08*********************************************/
+/*表的改变*/
+/*用户表表，增加字段password*/
+ALTER TABLE user ADD COLUMN password VARCHAR(32) NOT NULL COMMENT '密码' AFTER email;

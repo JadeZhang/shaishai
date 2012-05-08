@@ -14,6 +14,9 @@ app = Flask(__name__)
 app.config.from_object(config)
 app.debug = app.config.get('DEBUG', False)
 
+app.secret_key = app.config['SECRET_KEY']
+app.selnk_key = app.config["SELNK_KEY"]
+
 # 初始化进程全局的数据模型对象
 models.setup(app)
 

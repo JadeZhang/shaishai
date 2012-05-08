@@ -1,0 +1,40 @@
+/* overwrite global style */
+body{
+	background:#F7F7F7;
+}
+#footer .wrapper{
+	border-top:none;
+}
+/* 404 style */
+#content .wrapper .error-404{
+	background-color: #FFFFFF;
+	border: 1px solid #D6D3D3;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 0 3px rgba(204, 204, 204, 0.3);
+	margin-top:50px;
+	padding:50px 260px;
+}
+#content .wrapper .error-404 h3{
+	font-size:24px;
+}
+#content .wrapper .error-404 dl{
+	margin-top:30px;
+}
+#content .wrapper .error-404 dt{
+	font-size:16px;
+	margin-bottom:10px;
+}
+#content .wrapper .error-404 dd{
+	font-size:14px;
+	margin-bottom:5px;
+}
+#content .wrapper .error-404 .input-button{
+	margin-top:50px;
+	font-size:14px;
+	font-weight:bold;
+	line-height:30px;
+	color:#FFFFFF;
+	display:block;
+	width:100px;
+	margin:50px auto 0;
+}

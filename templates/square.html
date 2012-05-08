@@ -1,0 +1,23 @@
+{% extends "lib/layout.html" %}
+{% block title %}213晒晒{% endblock %}
+
+{% block stylesheets %}
+	<link type="text/css" rel="stylesheet" href="/static/css/inc/navigation.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/square.css" />
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" src="/static/js/square.js"></script>
+{% endblock %}
+
+{% block mainbody %}
+{% include "inc/header.html" %}
+
+<div id="content">
+	中间部分
+</div>
+
+<!-- navigation -->
+{% include "inc/navigation.html" %}
+{% include "inc/footer.html" %}
+{% endblock %}

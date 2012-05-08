@@ -1,0 +1,40 @@
+{% extends "lib/layout.html" %}
+{% block title %}213晒晒{% endblock %}
+
+{% block stylesheets %}
+	<link type="text/css" rel="stylesheet" href="/static/css/login.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/lib/jquery.ui.css" />
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" src="/static/js/login.js"></script>
+	<script type="text/javascript" src="/static/js/lib/jquery.ui.js"></script>
+	<script type="text/javascript" src="/static/js/lib/md5.js"></script>
+{% endblock %}
+
+
+{% block mainbody %}
+<div id="content">	
+	<div id="login-form" class="login-form">
+	    <h1>213，如此简单</h1>
+	    {% if g.error %}
+			<div class="error">
+				{% if g.error == 'invalid_password' %}
+					密码不正确
+				{% elif g.error == 'create_fail' %}
+					创建用户失败
+				{% endif %}
+			</div>
+		{% endif %}	 
+	    <form action="" method="post" autoComplete="off" name="login">
+	        <input type="email" name="email" placeholder="邮箱" value="{{ email }}">	 
+	        <input type="password" name="password" placeholder="密码" title="必须6-20位">
+	        <span style="display: block;">
+	            <input type="checkbox" name="checkbox">
+	            <label for="checkbox">记住我</label>
+	        </span>	 
+	        <input type="submit" value="一起213">	 
+	    </form>
+	</div>
+</div>
+{% endblock %}
