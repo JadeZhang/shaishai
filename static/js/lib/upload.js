@@ -9,7 +9,7 @@ $(function(){
 		
 		maxfiles: 5,
     	maxfilesize: 2,
-		url: 'post_file.php',
+		url: '/upload/html5/',
 		
 		uploadFinished:function(i,file,response){
 			$.data(file).addClass('done');
@@ -49,8 +49,7 @@ $(function(){
 		
 		progressUpdated: function(i, file, progress) {
 			$.data(file).find('.progress').width(progress);
-		}
-    	 
+		}    	 
 	});
 	
 	var template = '<div class="preview">'+

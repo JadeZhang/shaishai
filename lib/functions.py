@@ -22,6 +22,13 @@ import urllib
 from sqlalchemy import desc, asc
 import os
 
+def succeed(value):
+    r = json.dumps({"return":value, "success":True})
+    return r.decode('raw_unicode_escape').encode('utf-8')
+
+def failed(code, detail):
+    return json.dumps({"error":{"details":detail, "code":str(code)}, "success":False})
+
 
 def create_new_user(email, password):
     u = User()

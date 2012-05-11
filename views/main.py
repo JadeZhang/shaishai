@@ -16,6 +16,9 @@ import time
 from lib.utils import login_required, load_user
 import lib.functions as f
 import lib.mail as mail
+from lib import const
+import os
+from werkzeug import secure_filename
 
 
 # Flask 模块对象
@@ -71,10 +74,21 @@ def logout():
         return redirect(url_for('.login', next=request.args['next']))
     return redirect(url_for('.login'))
 
-@module.route("/welcome/", methods=['GET'])
+@module.route("/upload/", methods=['GET'])
 @load_user
-def welcome():
-    return render_template("welcome.html")
+def upload():
+    return render_template("upload.html")
+
+@module.route("/upload/html5/", methods=['GET','POST'])
+@load_user
+def upload_html5():   
+    if request.method == 'POST':
+        file = request.files['pic']
+        print file
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(const.UPLOAD_FOLDER, filename))   
+    return f.succeed({'status':'done'})
 
 @module.route("/square/", methods=['GET'])
 @login_required
@@ -90,3 +104,7 @@ def _update_session(user):
     session['user_id'] = user.id
     session['email'] = user.email
     session.update({'nickname': user.nickname})
+    
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in const.ALLOWED_EXTENSIONS
